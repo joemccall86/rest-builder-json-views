@@ -29,6 +29,9 @@ class FooSpec extends Specification implements AutowiredTest {
 
         if (initRestBuilder) {
             def rest = new RestBuilder()
+            // Workaround mentioned in
+            // https://github.com/grails/grails-data-mapping/issues/864
+//            def rest = new RestBuilder(registerConverters: false)
         }
 
         when: 'the object is rendered'
